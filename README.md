@@ -12,3 +12,5 @@ Talon tiedotus ja tietojärjestelmä
 - spot hinta
 ## huoltopyyntölomake
 - simppeli lomake asunnon numero, nimi, huollon tarve tms.
+
+![Screenshot](Värikartta.jpg)
