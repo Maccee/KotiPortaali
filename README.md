@@ -1,5 +1,6 @@
 ![Screenshot](logo.png)
-Talon tiedotus ja tietojärjestelmä
+
+# Talon tiedotus ja tietojärjestelmä
 
 
 ## Saunavuorojen varaus
