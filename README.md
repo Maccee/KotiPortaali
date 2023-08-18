@@ -1,4 +1,4 @@
-# KotiPortaali
+# ![Screenshot](logo.png)
 Talon tiedotus ja tietojärjestelmä
 
 
