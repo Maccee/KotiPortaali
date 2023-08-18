@@ -11,31 +11,44 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/12a0adac89.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
     <section class="mainContainer">
-        <header class="header">KotiPortaali</header>
+        <header class="header"><img src="./assests/logo2.png" alt=""></header>
 
-        <iframe id="contentFrame" name="contentFrame" src="./koti.html" class="innerContainer" frameborder="0" width="100%"></iframe>
-
-
+        <div id="contentArea" class="innerContainer"></div>
 
         <section class="navbar">
-
-
-            <a href="./koti.html" target="contentFrame"><i class="fa-solid fa-house-chimney"
-                    style="color: #136892;"></i></a>
-
-            <a href="./huolto.html" target="contentFrame"><i class="fa-solid fa-hammer" style="color: #136892;"></i></a>
-
+            <a href="javascript:void(0);" onclick="loadContent('./koti.html')">
+                <i class="fa-solid fa-house-chimney" style="color: #136892;"></i>
+            </a>
+            <a href="javascript:void(0);" onclick="loadContent('./huolto.html')">
+                <i class="fa-solid fa-hammer" style="color: #136892;"></i>
+            </a>
             <i class="fa-solid fa-bucket" style="color: #136892;"></i>
             <i class="fa-solid fa-message" style="color: #136892;"></i>
-
-
         </section>
     </section>
+
+    <script>
+        function loadContent(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contentArea').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading content:', error);
+                });
+        }
+
+        // Load default content on page load.
+        window.onload = function () {
+            loadContent('./koti.html');
+        };
+    </script>
+
 </body>
 
 </html>
