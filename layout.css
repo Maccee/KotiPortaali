@@ -1,0 +1,37 @@
+body {
+    font-size: 62.5%;
+    font-family: 'Roboto Slab', serif;
+    color: #3d2e39;
+    background-color: #b6cedf;
+}
+.header {
+    position: fixed;
+    top: 0;
+    color: #3d2e39;
+    background-color: #b6cedf;
+    width: 100%;
+    text-align: center;
+    
+}
+.innerContainer {
+    margin-top: 3rem;
+}
+section {
+    font-size: 2rem;
+    padding-block-end: 1rem;
+}
+
+.navbar {
+
+    font-size: 4rem;
+    background-color: #b6cedf;
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-block-end: 0;
+}
+i {
+    padding: 0.5rem;
+}
