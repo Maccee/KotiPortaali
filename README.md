@@ -1,4 +1,4 @@
-# ![Screenshot](logo.png)
+![Screenshot](logo.png)
 Talon tiedotus ja tietojärjestelmä
 
 
