@@ -17,10 +17,13 @@ body {
     margin-top: 3rem;
 }
 section {
-    font-size: 2rem;
+    font-size: 3rem;
     padding-block-end: 1rem;
 }
 
+.perusTeksti {
+    font-size: 1rem;
+}
 .navbar {
 
     font-size: 4rem;
