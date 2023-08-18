@@ -1,5 +1,6 @@
-# KotiPortaali
-Talon tiedotus ja tietojärjestelmä
+![Screenshot](logo.png)
+
+# Talon tiedotus ja tietojärjestelmä
 
 
 ## Saunavuorojen varaus
