@@ -21,9 +21,15 @@ p {
     padding-block-end: 1rem;
 }
 .header {
+    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.5rem;
     position: fixed;
     top: 0;
-    color: #3d2e39;
+    color: #136892;
     background-color: white;
     width: 100%;
     text-align: left;
@@ -67,4 +73,65 @@ section {
 }
 i {
     padding: 0.5rem;
+}
+
+
+
+
+.login-container {
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 1rem;
+    text-align: left;
+    font-size: 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 0rem;
+    top: 50%;
+    transform: translateY(-45%);
+    color: #aaa;
+}
+
+.input-group input {
+    width: 60%;
+    padding: 10px 15px 10px 3rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.forgot-password {
+    font-size: 1rem;
+    display: block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
 }
