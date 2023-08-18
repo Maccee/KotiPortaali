@@ -1,4 +1,4 @@
-![Screenshot](/assets/logo.png)
+![Screenshot](/assests/logo.png)
 
 # Talon tiedotus ja tietojärjestelmä
 
