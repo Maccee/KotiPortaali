@@ -33,6 +33,30 @@ button {
     color: #fff;
     cursor: pointer;
 }
+.buttonPieni {
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.35rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #39A6C5;
+    color: #fff;
+    cursor: pointer;
+}
+.buttonYmpyra {
+    font-family: 'Roboto Slab', serif;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    
+    
+    padding: 0 0 0.15rem 0;
+    border: none;
+    border-radius: 7rem;
+    background-color: #39A6C5;
+    color: #fff;
+    cursor: pointer;
+}
 
 hr {
     color: #b6cedf;
