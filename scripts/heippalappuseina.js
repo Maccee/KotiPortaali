@@ -8,8 +8,13 @@
 
 
 function printInput() {
+    
     // Haetaan heippalappuseinän <textarea> -osasta id viestin arvo, joka on käyttäjän kirjoittama teksti
     let viesti = document.getElementById("viesti").value;
+    // Jos viestikenttä <textarea> on tyhjä, eli mitään ei ole kirjoitettu, nappia painamalla ei tapahdu mitään.
+    if (!viesti) {
+        return;
+    }
 
     // Generoidaan tämän hetken aika, new Date(), ja muokataan se haluttuun muotoon getFormattedDate -funktiolla.
     // Sijoitetaan se paivamaara -muuttujaan.

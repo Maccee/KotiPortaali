@@ -20,6 +20,17 @@ p {
     font-size: 1rem;
     padding-block-end: 0rem;
 }
+
+button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #39A6C5;
+    color: #fff;
+    cursor: pointer;
+}
 .header {
     
     
@@ -116,6 +127,7 @@ i {
 }
 
 .button-group button {
+    font-family: 'Roboto Slab', serif;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -123,6 +135,8 @@ i {
     color: #fff;
     cursor: pointer;
 }
+
+
 
 .forgot-password {
     font-size: 1rem;
