@@ -28,13 +28,13 @@ function printInput() {
     // Tehdään päivämäärälle oma <p>, ja annetaan sen id paivamaara. Laitetaan sen <p>:n sisään paivamaara -muuttuja,
     // jossa on päivämäärä. Laitetaan kaikki viestiContainerin sisään.
     let paivamaaraP = document.createElement("p");
-    paivamaaraP.id = "paivamaara";
+    paivamaaraP.className = "paivamaara";
     paivamaaraP.textContent = paivamaara;
     viestiContainer.appendChild(paivamaaraP);
 
     // Tehdään sama käyttäjän kirjoittamalle viestille, kuin mitä tehtiin päivämäärälle.
     let viestiP = document.createElement("p");
-    viestiP.id = "viesti";
+    viestiP.className = "viesti";
     viestiP.textContent = viesti;
     viestiContainer.appendChild(viestiP);
 
@@ -57,4 +57,7 @@ function getFormattedDate(date) {
     let minutes = date.getMinutes().toString().padStart(2, '0');
 
     return `${day}.${month}.${year} ${hours}:${minutes}`;
+}
+function deleteInput() {
+    document.getElementById("viesti").value = "";
 }
