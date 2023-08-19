@@ -11,13 +11,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/12a0adac89.js" crossorigin="anonymous"></script>
+    <script src="./scripts/heippalappuseina.js"></script>
+    <script src="./scripts/navbar.js"></script>
 </head>
 
 <body>
     <section class="mainContainer">
         <header class="header">
             <a href="#" onclick="loadContent('./koti.html')"><img src="./assets/logo2.png" alt=""></a>
-            <a href="#" onclick="loadContent('./login.html')"><i class="fa-sharp fa-solid fa-right-to-bracket" style="color: #39A6C5;"></a></i>
+            <a href="#" onclick="loadContent('./login.html')"><i class="fa-sharp fa-solid fa-right-to-bracket"
+                    style="color: #39A6C5;"></a></i>
         </header>
 
         <div id="contentArea" class="innerContainer"></div>
@@ -30,32 +33,15 @@
                 <i class="fa-solid fa-hammer" style="color: #39A6C5;"></i>
             </a>
             <a href="#" onclick="loadContent('./sauna.html')">
-            <i class="fa-solid fa-bucket" style="color: #39A6C5;"></i>
-        </a>
+                <i class="fa-solid fa-bucket" style="color: #39A6C5;"></i>
+            </a>
             <a href="#" onclick="loadContent('./seina.html')">
-            <i class="fa-solid fa-message" style="color: #39A6C5;"></i>
-        </a>
+                <i class="fa-solid fa-message" style="color: #39A6C5;"></i>
+            </a>
         </section>
     </section>
 
-    <script>
-        function loadContent(url) {
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('contentArea').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Virhe:', error);
-                });
-        }
-
-        window.onload = function () {
-            loadContent('./koti.html');
-        };
-
-        
-    </script>
+    
 
 </body>
 
