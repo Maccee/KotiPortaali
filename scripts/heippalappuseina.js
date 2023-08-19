@@ -2,8 +2,8 @@
 // sen seina.html:n <section>, jonka id on heippalappuseina, sisään.
 // Esimerkki:
 //<section class="heippaviesti">
-//    <p id="paivamaara">{paivamaara}</p>
-//    <p id="viesti">{viesti}</p>
+//    <p class="paivamaara">{paivamaara}</p>
+//    <p class="viesti">{viesti}</p>
 //</section>
 
 
@@ -25,7 +25,7 @@ function printInput() {
     let viestiContainer = document.createElement("section");
     viestiContainer.className = "heippaviesti";
 
-    // Tehdään päivämäärälle oma <p>, ja annetaan sen id paivamaara. Laitetaan sen <p>:n sisään paivamaara -muuttuja,
+    // Tehdään päivämäärälle oma <p>, ja annetaan sen class paivamaara. Laitetaan sen <p>:n sisään paivamaara -muuttuja,
     // jossa on päivämäärä. Laitetaan kaikki viestiContainerin sisään.
     let paivamaaraP = document.createElement("p");
     paivamaaraP.className = "paivamaara";
@@ -37,12 +37,14 @@ function printInput() {
     viestiP.className = "viesti";
     viestiP.textContent = viesti;
     viestiContainer.appendChild(viestiP);
+    viestiContainer.append(document.createElement("hr"));
 
     // Tulostetaan meijän tekekemä viestiContainer seina.html:n <section> -kohtaan, jonka id on heippalappuseina.
     // Viesti näkyy aina ylimmäisenä prependin takia. Jos käytetään appendChild(viestiContainer);, tulisi uusi
     // viesti aina heippalappuseinan alimmaiseksi.
     let heippalappuseina = document.getElementById("heippalappuseina");
     heippalappuseina.prepend(viestiContainer);
+    
 
     // Tyhjennetään tekstikenttä <textarea> kun painetaan lähetä -mappia.
     document.getElementById("viesti").value = "";

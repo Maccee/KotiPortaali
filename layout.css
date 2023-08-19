@@ -26,7 +26,7 @@ p {
 button {
     font-family: 'Roboto Slab', serif;
     font-size: 1rem;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     border: none;
     border-radius: 0.5rem;
     background-color: #39A6C5;
@@ -40,7 +40,7 @@ hr {
 
 section {
     font-size: 3rem;
-    padding-block-end: 1rem;
+    padding-block-end: 0rem;
 }
 
 .header {
