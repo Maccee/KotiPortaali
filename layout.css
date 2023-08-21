@@ -112,6 +112,7 @@ section {
 
 i {
     padding: 0.5rem;
+    
 }
 
 
@@ -176,6 +177,7 @@ i {
     height: 75px;
 }
 .heippaNapit {
+    width: 50%;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
