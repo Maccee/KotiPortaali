@@ -34,4 +34,4 @@
 
 
 
-![Screenshot](assests/varikartta.jpg)
+![Screenshot](assets/varikartta.jpg)
