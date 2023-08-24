@@ -1,3 +1,6 @@
+// Tämä tiedosto korvattu seina.js tiedostolla!
+
+
 // Tämä scripti tekee heippalappuseinälle viestejä päivämäärän ja käyttäjän antaman viestin mukaan, ja tulostaa
 // sen seina.html:n <section>, jonka id on heippalappuseina, sisään.
 // Esimerkki:
