@@ -6,6 +6,7 @@
 // esim. "./koti.html", jolloin saadaan loadContent('./koti.html').
 function loadContent(url) {
     if (url === "./seina.html") {
+        
         hae();
     }
     // Käytetään fetch-funktiota hakeaksemme sisältöä annetusta URL:sta. Vaikka fetch voidaan usein yhdistää API-kutsuihin,

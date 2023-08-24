@@ -1,4 +1,4 @@
-
+updateCounter();
 function deleteInput() {
     document.getElementById('viesti').value = '';
 }
@@ -6,7 +6,7 @@ function deleteInput() {
 function printInput() {
     let message = document.getElementById('viesti').value;
     if (message.trim() === '') {
-        alert('Please enter a message.');
+        
         return;
     }
 
@@ -77,6 +77,18 @@ function addThreeHours(dateString) {
         + date.getMinutes().toString().padStart(2, '0');
 
     return formattedDate + " " + formattedTime;
+}
+function updateCounter() {
+    const textarea = document.getElementById('viesti');
+    const counter = document.getElementById('counter');
+    
+    // Trim content if it's too long
+    if(textarea.value.length > 250) {
+        textarea.value = textarea.value.substring(0, 250);
+    }
+
+    // Update the counter
+    counter.innerText = `${textarea.value.length}/250`;
 }
 
 

@@ -1,5 +1,10 @@
 <h1>Heippalappuseinä</h1>
-<textarea id="viesti" class="viestiKentta" placeholder="Kirjoita viesti"></textarea>
+<div class="textarea-container">
+    <textarea id="viesti" class="viestiKentta" placeholder="Kirjoita viesti" oninput="updateCounter()"></textarea>
+    <span id="counter" class="counter">0/250</span>
+</div>
+
+
 <section class="heippaNapit">
     <button onclick="deleteInput()">Tyhjennä</button>
     <button onclick="printInput()">Lähetä</button>
