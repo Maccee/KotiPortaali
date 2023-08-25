@@ -1,19 +1,6 @@
 ![Screenshot](/assets/logo.png)
 
-## Talon tiedotus ja tietojärjestelmä
 
-## Tiedotteet
-- Etusivulla ensimmäisenä
-### todos
-    - databaseen uus table ja backend integraatio
-    - linkki uuden tiedotteen kirjoittamiseen
-
-## huoltopyyntölomake
-- simppeli lomake asunnon numero, nimi, huollon tarve tms.
-### todos
-    - Kukkis mikä homma, oletan että perjantaina valmis t. Scrummaster
-
-## Saunavuorojen varaus
 - kalenteri, varaus, poisto, vaihto
 
 ## Heippalappuseinä
