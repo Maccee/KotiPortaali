@@ -1,7 +1,8 @@
 ![Screenshot](/assets/logo.png)
 
-## Talon tiedotus ja tietojärjestelmä
 
+
+=======
 ## Tiedotteet
 
 - Etusivulla ensimmäisenä
@@ -20,6 +21,7 @@
     - Kukkis mikä homma, oletan että perjantaina valmis t. Scrummaster
 
 ## Saunavuorojen varaus
+
 
 - kalenteri, varaus, poisto, vaihto
 
@@ -50,4 +52,4 @@
 
 ![Screenshot](assets/varikartta.jpg)
 
-Moit menin muokkaamaan
+
