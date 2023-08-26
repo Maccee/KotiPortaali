@@ -21,6 +21,9 @@ function loadContent(url) {
         // navbarin välistä.
         .then(data => {
             document.getElementById('contentArea').innerHTML = data;
+            if (url === './pesukone.html') {
+                initPesukone();
+            }
         })
         // Tulostetaan virheilmoitus konsoliin, jos sisällön hakemisessa tulee ongelmia.
         .catch(error => {
