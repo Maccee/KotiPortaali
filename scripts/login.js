@@ -30,7 +30,7 @@ function Rekisteroidu() {
   // Hash the password using SHA-256 (as an example)
   var hashedPassword = CryptoJS.SHA256(password).toString();
 
-  var url = `https://kopoquery.azurewebsites.net/api/login?reg=1&username=${username}&password=${hashedPassword}`;
+  var url = `https://kopofunction.azurewebsites.net/api/login?reg=1&username=${username}&password=${hashedPassword}`;
 
   // Send a request to the server (e.g., using fetch API)
   fetch(url, {
