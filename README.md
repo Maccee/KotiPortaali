@@ -48,7 +48,8 @@
 
 ### todos
 
-    - varmaan ens-alkuun joku simppeli käyttäjänimi/salasanakombo ilman varmistuksia.
+    - varmaan ens-alkuun joku simppeli käyttäjänimi/salasanakombo ilman varmistuksia......
+    - paskatku vimosen päälle JWT HASH TOKEN VALIDATION SESSIONID VERIFY
 
 ![Screenshot](assets/varikartta.jpg)
 
