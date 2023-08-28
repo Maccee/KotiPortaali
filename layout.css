@@ -142,14 +142,7 @@ i {
   border-radius: 5px;
   text-align: left;
 }
-.error-message {
-  color: red;
-  font-size: 12px;
-}
 
-.input-error {
-  border: 1px solid red;
-}
 
 .button-group {
   display: flex;

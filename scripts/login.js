@@ -4,9 +4,6 @@ function toggleRegister() {
   var loginBtn = document.getElementById("loginBtn");
   var registerBtn = document.getElementById("registerBtn");
 
-  // Clear error messages
-  clearAllErrorMessages();
-
   if (title.innerText === "Kirjaudu sisään") {
     title.innerText = "Rekisteröidy";
     confirmPasswordDiv.style.display = "block";
@@ -28,92 +25,52 @@ function toggleRegister() {
   }
 }
 
-function clearAllErrorMessages() {
-  var usernameError = document.getElementById("usernameError");
-  var passwordError = document.getElementById("passwordError");
 
-  var username = document.getElementById("username");
-  var password = document.getElementById("password");
-
-  username.classList.remove("input-error");
-  password.classList.remove("input-error");
-
-  usernameError.textContent = "";
-  passwordError.textContent = "";
-}
-
-function clearErrorState(event) {
-  var inputField = event.target;
-  var errorField;
-
-  if (inputField.id === "username") {
-    errorField = document.getElementById("usernameError");
-  } else if (inputField.id === "password") {
-    errorField = document.getElementById("passwordError");
-  } else if (inputField.id === "confirmPassword") {
-    errorField = document.getElementById("confirmPasswordError");
-  }
-
-  if (errorField) {
-    errorField.textContent = ""; // Clear the error message
-    inputField.classList.remove("input-error"); // Remove the error style
-  }
-}
 
 function Kirjaudu() {
-  var username = document.getElementById("username");
-  var password = document.getElementById("password");
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
 
-  var usernameError = document.getElementById("usernameError");
-  var passwordError = document.getElementById("passwordError");
-
-  // Reset styles and error messages
-  username.classList.remove("input-error");
-  password.classList.remove("input-error");
-  usernameError.textContent = "";
-  passwordError.textContent = "";
-
-  // Validation
-  if (!username.value) {
-    username.classList.add("input-error");
-    usernameError.textContent = "Käyttäjänimi is required.";
-  }
-
-  if (!password.value) {
-    password.classList.add("input-error");
-    passwordError.textContent = "Salasana is required.";
-  }
-
-  if (!username.value || !password.value) {
+  if (!username || !password) {
+    alert("Please enter both username and password.");
     return false;
   }
 
-  // Proceed with the request if validation passed
-  var hashedPassword = CryptoJS.SHA256(password.value).toString();
-  var url = `https://kopofunction.azurewebsites.net/api/login?reg=0&username=${username.value}&password=${hashedPassword}`;
+  // Ideally, just send the raw password and let the server handle hashing and other operations.
+  var payload = {
+    reg: 0,
+    username: username,
+    password: password
+  };
 
-  // Send a request to the server
-  fetch(url, {
-    method: "GET",
+  fetch("https://kopofunction.azurewebsites.net/api/login", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
   })
-    .then((response) => {
-      // Check if the response is not okay (like 400, 500, etc.)
-      if (!response.ok) {
-        return response.text().then((errorMsg) => {
-          throw new Error(errorMsg);
-        });
-      }
-      return response.text();
-    })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert(error.message); // Alert the user or display it in some other way
-    });
+  .then((response) => {
+    // Check if the response is not okay (like 400, 500, etc.)
+    if (!response.ok) {
+      return response.text().then((errorMsg) => {
+        throw new Error(errorMsg);
+      });
+    }
+    return response.text();
+  })
+  .then((data) => {
+    console.log(data);
+    alert(data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+    alert(error.message);
+  });
+
   return false;
 }
+
 
 function Rekisteroidu() {
   var usernameElem = document.getElementById("username");
@@ -124,48 +81,30 @@ function Rekisteroidu() {
   var password = passwordElem.value;
   var confirmPassword = confirmPasswordElem.value;
 
-  var usernameError = document.getElementById("usernameError");
-  var passwordError = document.getElementById("passwordError");
-  var confirmPasswordError = document.getElementById("confirmPasswordError");
-
   // Validation
-  if (!username) {
-    usernameElem.classList.add("input-error");
-    usernameError.textContent = "Käyttäjänimi is required.";
-  }
-
-  if (!password) {
-    passwordElem.classList.add("input-error");
-    passwordError.textContent = "Salasana is required.";
-  }
-
-  if (!confirmPassword) {
-    confirmPasswordElem.classList.add("input-error");
-    confirmPasswordError.textContent = "Vahvista salasana.";
-  }
-
-  if (password !== confirmPassword) {
-    confirmPasswordElem.classList.add("input-error");
-    confirmPasswordError.textContent = "Salasana doesn't match.";
-  }
-
   if (
     !username ||
     !password ||
     !confirmPassword ||
     password !== confirmPassword
   ) {
+    alert("Please ensure all fields are filled and passwords match.");
     return false;
   }
 
-  // Hash the password using SHA-256 (as an example)
-  var hashedPassword = CryptoJS.SHA256(password).toString();
-
-  var url = `https://kopofunction.azurewebsites.net/api/login?reg=1&username=${username}&password=${hashedPassword}`;
-
+  
+  var payload = {
+    reg: 1,
+    username: username,
+    password: password
+  };
   // Send a request to the server (e.g., using fetch API)
-  fetch(url, {
-    method: "GET",
+  fetch("https://kopofunction.azurewebsites.net/api/login", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
   })
     .then((response) => {
       if (!response.ok) {
@@ -176,14 +115,18 @@ function Rekisteroidu() {
       return response.text();
     })
     .then((data) => {
-      console.log(data);
+      alert(data);
     })
     .catch((error) => {
       console.error("Error:", error);
       alert(error.message);
     });
-  username.value = "";
-  password.value = "";
-  confirmPassword.value = "";
+
+  usernameElem.value = "";
+  passwordElem.value = "";
+  confirmPasswordElem.value = "";
+  toggleRegister();
+
   return false;
 }
+
