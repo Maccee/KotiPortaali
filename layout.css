@@ -23,6 +23,11 @@ p {
   padding-block-end: 0rem;
 }
 
+.hidden {
+  display: none;
+}
+
+
 button {
   font-family: "Roboto Slab", serif;
   font-size: 1rem;
@@ -197,4 +202,7 @@ i {
   bottom: 0.5rem; /* Adjust as needed */
   right: 0px; /* Adjust as needed */
   padding: 2px 5px;
+}
+.username-text {
+  font-size: 0.5rem;
 }

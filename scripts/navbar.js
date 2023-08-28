@@ -5,12 +5,18 @@ function loadContent(url) {
       document.getElementById("contentArea").innerHTML = data;
       if (url === "./seina.html") {
         hae();
+        updateCounter();
+      }
+      // After content of koti.html is loaded
+      if (url === "./koti.html") {
+        checkAdminAndDisplayButton();
       }
     })
     .catch((error) => {
       console.error("Virhe:", error);
     });
 }
+
 window.onload = function () {
   loadContent("./koti.html");
 };

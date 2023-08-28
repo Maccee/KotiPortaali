@@ -10,16 +10,14 @@ function toggleRegister() {
     loginBtn.innerText = "Back to Login";
     registerBtn.innerText = "Valmis";
 
-    // Update button functionalities
-    loginBtn.onclick = toggleRegister; // set login button to revert back to login mode
-    registerBtn.onclick = Rekisteroidu; // set register button to invoke Rekisteroidu()
+    loginBtn.onclick = toggleRegister;
+    registerBtn.onclick = Rekisteroidu;
   } else {
     title.innerText = "Kirjaudu sisään";
     confirmPasswordDiv.style.display = "none";
     loginBtn.innerText = "Kirjaudu";
     registerBtn.innerText = "Rekisteröidy";
 
-    // Restore button functionalities
     loginBtn.onclick = Kirjaudu;
     registerBtn.onclick = toggleRegister;
   }
@@ -32,40 +30,44 @@ function Kirjaudu() {
   var password = document.getElementById("password").value;
 
   if (!username || !password) {
-    alert("Please enter both username and password.");
-    return false;
+      alert("Katsothan, että kummatkin kentät ovat täytetty!");
+      return false;
   }
 
-  // Ideally, just send the raw password and let the server handle hashing and other operations.
   var payload = {
-    reg: 0,
-    username: username,
-    password: password
+      reg: 0,
+      username: username,
+      password: password
   };
 
   fetch("https://kopofunction.azurewebsites.net/api/login", {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(payload)
+      method: "POST",
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
   })
   .then((response) => {
-    // Check if the response is not okay (like 400, 500, etc.)
-    if (!response.ok) {
-      return response.text().then((errorMsg) => {
-        throw new Error(errorMsg);
-      });
-    }
-    return response.text();
+      // Check if the response is not okay (like 400, 500, etc.)
+      if (!response.ok) {
+          return response.json().then((errorData) => {
+              throw new Error(errorData.message);
+          });
+      }
+      return response.json();
   })
   .then((data) => {
-    console.log(data);
-    alert(data);
+      console.log(data.message);
+      
+
+      // Set cookies
+      setCookie("username", data.username, 1);
+      setCookie("isAdmin", data.isAdmin, 1);
+      window.location.href = "/";
   })
   .catch((error) => {
-    console.error("Error:", error);
-    alert(error.message);
+      console.error("Error:", error);
+      alert(error.message);
   });
 
   return false;
@@ -88,11 +90,10 @@ function Rekisteroidu() {
     !confirmPassword ||
     password !== confirmPassword
   ) {
-    alert("Please ensure all fields are filled and passwords match.");
+    alert("Täytä kaikki kentät ja varmista, että salasanat täsmää!");
     return false;
   }
 
-  
   var payload = {
     reg: 1,
     username: username,
@@ -115,6 +116,7 @@ function Rekisteroidu() {
       return response.text();
     })
     .then((data) => {
+      console.log(data)
       alert(data);
     })
     .catch((error) => {
@@ -129,4 +131,7 @@ function Rekisteroidu() {
 
   return false;
 }
+
+
+
 

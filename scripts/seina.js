@@ -1,4 +1,4 @@
-updateCounter();
+
 function deleteInput() {
   document.getElementById("viesti").value = "";
 }
@@ -14,7 +14,7 @@ function printInput() {
 
   // Create the full URL to send the request to
   let apiUrl =
-    "https://kopofunction.azurewebsites.net/api/query?name=" + encodedMessage;
+    "#" + encodedMessage;
 
   // Use the Fetch API to send the request
   fetch(apiUrl, {
@@ -39,7 +39,7 @@ function printInput() {
   document.getElementById("viesti").value = "";
 }
 function hae() {
-  fetch("https://kopofunction.azurewebsites.net/api/query")
+  fetch("#")
     .then((response) => response.json())
     .then((data) => {
       // Clear out any existing content in heippalappuseina
