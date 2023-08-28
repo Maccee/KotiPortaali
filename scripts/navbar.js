@@ -11,6 +11,9 @@ function loadContent(url) {
       if (url === "./koti.html") {
         checkAdminAndDisplayButton();
       }
+      if (url === './pesukone.html') {
+        initPesukone();
+    }
     })
     .catch((error) => {
       console.error("Virhe:", error);
