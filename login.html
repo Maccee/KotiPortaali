@@ -1,23 +1,46 @@
-
-
 <body>
-    <div class="login-container">
-        <h1>Kirjaudu sisään</h1>
-        <form action="#" method="post">
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" name="username" id="username" placeholder="Käyttäjänimi" required>
-            </div>
-            <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="password" placeholder="Salasana" required>
-            </div>
-            <div class="button-group">
-                <button type="submit">Kirjaudu</button>
-                <button type="button">Rekisteröidy</button>
-            </div>
-        </form>
-        <a href="#" class="forgot-password">Unohditko salasanan?</a>
-    </div>
+  <div class="login-container">
+    <h1>Kirjaudu sisään</h1>
+    <form onsubmit="return false;">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Käyttäjänimi"
+          required
+        />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Salasana"
+          required
+        />
+      </div>
+      <div class="input-group" id="confirmPasswordDiv" style="display: none">
+        <i class="fas fa-lock"></i>
+        <input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          placeholder="Vahvista Salasana"
+          required
+        />
+      </div>
+      <div class="button-group">
+        <button type="button" id="loginBtn" onclick="Kirjaudu()">
+          Kirjaudu
+        </button>
+        <button type="button" id="registerBtn" onclick="toggleRegister()">
+          Rekisteröidy
+        </button>
+      </div>
+    </form>
+    <a href="#" class="forgot-password">Unohditko salasanan?</a>
+  </div>
 </body>
-
