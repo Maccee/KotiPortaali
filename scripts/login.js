@@ -1,3 +1,4 @@
+
 function toggleRegister() {
   var title = document.querySelector("h1");
   var confirmPasswordDiv = document.getElementById("confirmPasswordDiv");
@@ -37,35 +38,38 @@ function Kirjaudu() {
     username: username,
     password: password
   };
-  fetch("https://kopofunction.azurewebsites.net/api/login", {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(payload)
-  })
+  
+
+    fetch("https://kopofunction.azurewebsites.net/api/token", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
     .then((response) => {
-      spinner.style.display = "none";
-      if (!response.ok) {
-        return response.json().then((errorData) => {
-          throw new Error(errorData.message);
-        });
-      }
-      return response.json();
+        spinner.style.display = "none";
+        if (!response.ok) {
+            return response.json().then((errorData) => {
+                throw new Error(errorData.message);
+            });
+        }
+        return response.json();
     })
     .then((data) => {
-      console.log(data.message);
-      // Kun kirjutuminen onnistuu, tehdään evästeet databasesta saatujen arvojen mukaan!
-      setCookie("username", data.username, 1);
-      setCookie("isAdmin", data.isAdmin, 1);
-      window.location.href = "/";
+        console.log(data);
+        // Store the token
+        localStorage.setItem('token', data.token);
+        loadContent("./koti.html");
+        displayUserInfo();
+        console.log(isAdmin());
     })
     .catch((error) => {
-      console.error("Error:", error);
-      alert(error.message);
-      spinner.style.display = "none";
+        console.error("Error:", error);
+        alert(error.message);
+        spinner.style.display = "none";
     });
-  return false;
+    return false;
 }
 
 // uuden käyttäjän rekisteröinti!

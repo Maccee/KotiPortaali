@@ -38,6 +38,7 @@ button {
   color: #fff;
   cursor: pointer;
 }
+
 .buttonPieni {
   font-family: "Roboto Slab", serif;
   font-size: 0.7rem;
@@ -48,6 +49,7 @@ button {
   color: #fff;
   cursor: pointer;
 }
+
 .buttonYmpyra {
   font-family: "Roboto Slab", serif;
   width: 35px;
@@ -170,11 +172,13 @@ i {
 .heippalappuseina {
   padding-block-end: 1rem;
 }
+
 .viestiKentta {
   width: 100%;
   height: 75px;
   resize: none;
 }
+
 .heippaNapit {
   width: 50%;
   display: flex;
@@ -183,40 +187,57 @@ i {
   padding-block-start: 1rem;
   padding-block-end: 0;
 }
+
 .seinaPvm {
   font-size: 1rem;
 }
+
 .seinaViesti {
   font-size: 1.3rem;
 }
+
 .textarea-container {
   width: 100%;
   position: relative;
-  display: inline-block; /* This will ensure the container wraps around the textarea */
+  display: inline-block;
+  /* This will ensure the container wraps around the textarea */
 }
 
 .counter {
   font-size: 1rem;
   color: #3d2e3997;
   position: absolute;
-  bottom: 0.5rem; /* Adjust as needed */
-  right: 0px; /* Adjust as needed */
+  bottom: 0.5rem;
+  /* Adjust as needed */
+  right: 0px;
+  /* Adjust as needed */
   padding: 2px 5px;
 }
+
+.loginStuff {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px dashed black;
+  padding: 0 1rem 0 1rem;
+}
 .username-text {
-  font-size: 0.5rem;
+  font-size: 1rem;
+}
+.logout-text {
+  font-size: 1rem;
+  text-align: center;
 }
 
 
 label {
-    font-family: sans-serif;
-    font-size: 1rem;
-    padding-right: 10px;
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 10px;
 }
-  
+
 select {
-    font-size: 0.9rem;
-    padding: 2px 5px;
+  font-size: 0.9rem;
+  padding: 2px 5px;
 }
 
 .spinner {

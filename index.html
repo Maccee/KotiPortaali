@@ -11,11 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/12a0adac89.js" crossorigin="anonymous"></script>
-    <script src="./scripts/globalEventListeners.js"></script>
-    <script src="./scripts/cookie.js"></script>
-    <script src="./scripts/koti.js"></script>
-    <script src="./scripts/seina.js"></script>
-    <script src="./scripts/pesukone.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
     <script src="./scripts/navbar.js"></script>
     <script src="./scripts/login.js"></script>
 </head>
@@ -24,18 +20,17 @@
     <section class="mainContainer">
 
         <header class="header">
-            <!-- loadContent(), navbar.js -->
             <a href="#" onclick="loadContent('./koti.html')"><img src="./assets/logo2.png" alt=""></a>
-            <span class="login-status hidden">
-                <span class="username-text"></span>
-                <!-- Logout() poistaa cookien, cookie.js -->
-                <a href="#" onclick="logout()"><i class="fa-solid fa-right-from-bracket"
-                        style="color: #39A6C5;"></i></a>
+            <span class="loginStuff">
+                <span id="userInfo" class="username-text"></span>
+                <span id="logout" class="logout-text"><a href="#" onclick="logout()"></a></span>
+                <a class="login-button" href="#" onclick="loadContent('./login.html')">
+                    <i class="fa-solid fa-right-to-bracket" style="color: #39A6C5;"></i>
+                </a>
             </span>
-            <a class="login-button" href="#" onclick="loadContent('./login.html')">
-                <i class="fa-solid fa-right-to-bracket" style="color: #39A6C5;"></i>
-            </a>
+            
         </header>
+        
 
         <div id="contentArea" class="innerContainer"></div>
 
@@ -59,5 +54,6 @@
     </section>
 
 </body>
+
 
 </html>
