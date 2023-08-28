@@ -3,13 +3,11 @@ function toggleRegister() {
   var confirmPasswordDiv = document.getElementById("confirmPasswordDiv");
   var loginBtn = document.getElementById("loginBtn");
   var registerBtn = document.getElementById("registerBtn");
-
   if (title.innerText === "Kirjaudu sisään") {
     title.innerText = "Rekisteröidy";
     confirmPasswordDiv.style.display = "block";
     loginBtn.innerText = "Back to Login";
     registerBtn.innerText = "Valmis";
-
     loginBtn.onclick = toggleRegister;
     registerBtn.onclick = Rekisteroidu;
   } else {
@@ -17,63 +15,60 @@ function toggleRegister() {
     confirmPasswordDiv.style.display = "none";
     loginBtn.innerText = "Kirjaudu";
     registerBtn.innerText = "Rekisteröidy";
-
     loginBtn.onclick = Kirjaudu;
     registerBtn.onclick = toggleRegister;
   }
 }
 
-
-
+// Kirjautumis -funktio!
 function Kirjaudu() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-
   if (!username || !password) {
-      alert("Katsothan, että kummatkin kentät ovat täytetty!");
-      return false;
+    alert("Katsothan, että kummatkin kentät ovat täytetty!");
+    return false;
   }
 
-  var payload = {
-      reg: 0,
-      username: username,
-      password: password
-  };
+  let spinner = document.querySelector(".spinner");
+  spinner.style.display = "inline-block"; // Show the spinner
 
+  var payload = {
+    reg: 0,
+    username: username,
+    password: password
+  };
   fetch("https://kopofunction.azurewebsites.net/api/login", {
-      method: "POST",
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
   })
-  .then((response) => {
-      // Check if the response is not okay (like 400, 500, etc.)
+    .then((response) => {
+      spinner.style.display = "none";
       if (!response.ok) {
-          return response.json().then((errorData) => {
-              throw new Error(errorData.message);
-          });
+        return response.json().then((errorData) => {
+          throw new Error(errorData.message);
+        });
       }
       return response.json();
-  })
-  .then((data) => {
+    })
+    .then((data) => {
       console.log(data.message);
-      
-
-      // Set cookies
+      // Kun kirjutuminen onnistuu, tehdään evästeet databasesta saatujen arvojen mukaan!
       setCookie("username", data.username, 1);
       setCookie("isAdmin", data.isAdmin, 1);
       window.location.href = "/";
-  })
-  .catch((error) => {
+    })
+    .catch((error) => {
       console.error("Error:", error);
       alert(error.message);
-  });
-
+      spinner.style.display = "none";
+    });
   return false;
 }
 
-
+// uuden käyttäjän rekisteröinti!
 function Rekisteroidu() {
   var usernameElem = document.getElementById("username");
   var passwordElem = document.getElementById("password");
