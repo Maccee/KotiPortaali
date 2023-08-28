@@ -1,7 +1,7 @@
 <body>
   <div class="login-container">
     <h1>Kirjaudu sisään</h1>
-    <form action="#" method="post" onsubmit="return Rekisteroidu();">
+    <form action="#" method="post">
       <div class="input-group">
         <i class="fas fa-user"></i>
         <input
@@ -11,6 +11,7 @@
           placeholder="Käyttäjänimi"
           required
         />
+        <span id="usernameError" class="error-message"></span>
       </div>
       <div class="input-group">
         <i class="fas fa-lock"></i>
@@ -21,6 +22,7 @@
           placeholder="Salasana"
           required
         />
+        <span id="passwordError" class="error-message"></span>
       </div>
       <div class="input-group" id="confirmPasswordDiv" style="display: none">
         <i class="fas fa-lock"></i>
@@ -31,12 +33,14 @@
           placeholder="Vahvista Salasana"
           required
         />
+        <span id="confirmPasswordError" class="error-message"></span>
       </div>
       <div class="button-group">
-        <button type="submit" id="loginBtn">Kirjaudu</button>
-        <button type="button" onclick="toggleRegister()">Rekisteröidy</button>
-        <button type="submit" id="registerNowBtn" style="display: none">
-          Register Now
+        <button type="button" id="loginBtn" onclick="Kirjaudu()">
+          Kirjaudu
+        </button>
+        <button type="submit" id="registerBtn" onclick="toggleRegister()">
+          Rekisteröidy
         </button>
       </div>
     </form>

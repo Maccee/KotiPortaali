@@ -39,7 +39,7 @@ function printInput() {
   document.getElementById("viesti").value = "";
 }
 function hae() {
-  fetch("https://kopoquery.azurewebsites.net/api/query")
+  fetch("https://kopofunction.azurewebsites.net/api/query")
     .then((response) => response.json())
     .then((data) => {
       // Clear out any existing content in heippalappuseina
