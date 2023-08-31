@@ -46,6 +46,7 @@ function printInput() {
 
   // Clear the input field after sending
   document.getElementById("viesti").value = "";
+  updateCounter();
 }
 
 

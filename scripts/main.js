@@ -34,14 +34,9 @@ function isAdmin() {
     return decodedToken.isAdmin && decodedToken.isAdmin === "True";
 }
 function logout() {
-    const logoutElem = document.getElementById('logout');
-    const text = logoutElem.querySelector('a').textContent;
+    localStorage.removeItem('token');
+    loadContent('./login.html');
     
-    if (text === 'Logout') {
-        localStorage.removeItem('token');
-    } else {
-        loadContent('./login.html');
-    }
     
     displayUserInfo();  // Update the display based on new login status
 }
