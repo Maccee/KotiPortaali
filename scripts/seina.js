@@ -1,24 +1,31 @@
-
 function deleteInput() {
   document.getElementById("viesti").value = "";
 }
 
 function printInput() {
-  let message = document.getElementById("viesti").value;
-  if (message.trim() === "") {
+  let token = localStorage.getItem("token");
+
+  if (!token) {
+    console.log("No token found in localStorage. Exiting.");
     return;
   }
 
-  // Encode the message to be URL-safe
-  let encodedMessage = encodeURIComponent(message);
+  let message = document.getElementById("viesti").value;
+  if (message.trim() === "") {
+    console.log("Tyhjä viestikenttä. Exiting.");
+    return;
+  }
 
-  // Create the full URL to send the request to
-  let apiUrl =
-    "#" + encodedMessage;
+  let apiUrl = "https://kopofunction.azurewebsites.net/api/heippalappu";
 
   // Use the Fetch API to send the request
   fetch(apiUrl, {
-    method: "GET",
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}` // Include the token in the request headers
+    },
+    body: JSON.stringify({ text: message }) // Send the message as JSON
   })
     .then((response) => {
       if (!response.ok) {
@@ -36,25 +43,48 @@ function printInput() {
         error.message
       );
     });
+
+  // Clear the input field after sending
   document.getElementById("viesti").value = "";
 }
+
+
 function hae() {
-  fetch("#")
+  // 1. Retrieve the token from localStorage
+  let token = localStorage.getItem("token");
+
+  if (!token) {
+    console.log("No token found in localStorage. Exiting.");
+    return;
+  }
+
+  const seina = document.getElementById("heippalappuseina");
+
+  if (!seina) {
+    console.log("Seina is null. Exiting.");
+    return;
+  }
+
+  console.log("Token is good!");
+  console.log("Seina is not null");
+
+  fetch("https://kopofunction.azurewebsites.net/api/heippalappu", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`, // Include the token in the request headers
+    },
+  })
     .then((response) => response.json())
     .then((data) => {
-      // Clear out any existing content in heippalappuseina
       const seina = document.getElementById("heippalappuseina");
       seina.innerHTML = "";
-
-      // Reverse the data to put the last message on top
       data.reverse().forEach((message) => {
-        let adjustedDate = addThreeHours(message.date);
-
         let messageElement = `
-                    <p class="seinaPvm">${adjustedDate}</p>
-                    <p class="seinaViesti">${message.text}</p>
-                    <hr>
-                `;
+          <p class="seinaPvm">${message.date}</p>
+          <p class="seinaViesti">${message.text}</p>
+          <hr>
+        `;
         heippalappuseina.innerHTML += messageElement;
       });
     })
@@ -62,32 +92,7 @@ function hae() {
       console.log("Error fetching messages:", error);
     });
 }
-function addThreeHours(dateString) {
-  // Extract date and time parts
-  const [day, month, yearTime] = dateString.split(".");
-  const [year, time] = yearTime.split(" ");
-  const [hours, minutes] = time.split(":");
 
-  // Construct a new Date object using the parts
-  let date = new Date(year, month - 1, day, hours, minutes); // months are 0-indexed in JS
-
-  // Add 3 hours
-  date.setHours(date.getHours() + 3);
-
-  // Format date back to desired format
-  let formattedDate =
-    date.getDate().toString().padStart(2, "0") +
-    "." +
-    (date.getMonth() + 1).toString().padStart(2, "0") +
-    "." +
-    date.getFullYear();
-  let formattedTime =
-    date.getHours().toString().padStart(2, "0") +
-    ":" +
-    date.getMinutes().toString().padStart(2, "0");
-
-  return formattedDate + " " + formattedTime;
-}
 function updateCounter() {
   const textarea = document.getElementById("viesti");
   const counter = document.getElementById("counter");
@@ -99,4 +104,15 @@ function updateCounter() {
 
   // Update the counter
   counter.innerText = `${textarea.value.length}/250`;
+}
+
+function checkLogin() {
+  const seina = document.getElementById("heippalappuseina");
+  let token = localStorage.getItem("token");
+
+  if (!token) {
+      loadContent("./login.html");
+  } else {
+      hae();
+  }
 }

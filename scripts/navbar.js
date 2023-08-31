@@ -5,15 +5,17 @@ function loadContent(url) {
     .then((data) => {
       document.getElementById("contentArea").innerHTML = data;
       if (url === "./seina.html") {
-        //hae();
-        //updateCounter();
+        checkLogin();
+        updateCounter();
       }
       // After content of koti.html is loaded
       if (url === "./koti.html") {
         
       }
       if (url === './pesukone.html') {
+        //checkLogin();
         //initPesukone();
+        
       }
 
     })
