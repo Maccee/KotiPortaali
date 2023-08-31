@@ -11,9 +11,9 @@ function displayUserInfo() {
         const username = decodedToken.username;
         if (username) {
             userInfoElem.style.display = 'block';
-            userInfoElem.textContent = `Logged in as ${username}`;
+            userInfoElem.textContent = `Kirjautunut: ${username}`;
             logoutElem.style.display = 'block';
-            logoutElem.querySelector('a').textContent = 'Logout';
+            logoutElem.querySelector('a').textContent = 'Kirjaudu ulos';
             loginButtonElem.style.display = 'none';
         }
     } else {
@@ -38,7 +38,7 @@ function logout() {
     loadContent('./login.html');
     
     
-    displayUserInfo();  // Update the display based on new login status
+    displayUserInfo(); 
 }
 
 window.logout = logout;

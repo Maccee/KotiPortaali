@@ -7,7 +7,7 @@ function toggleRegister() {
   if (title.innerText === "Kirjaudu sisään") {
     title.innerText = "Rekisteröidy";
     confirmPasswordDiv.style.display = "block";
-    loginBtn.innerText = "Back to Login";
+    loginBtn.innerText = "Takaisin";
     registerBtn.innerText = "Valmis";
     loginBtn.onclick = toggleRegister;
     registerBtn.onclick = Rekisteroidu;
@@ -82,7 +82,7 @@ function Rekisteroidu() {
   var password = passwordElem.value;
   var confirmPassword = confirmPasswordElem.value;
 
-  // Validation
+ 
   if (
     !username ||
     !password ||
@@ -98,7 +98,7 @@ function Rekisteroidu() {
     username: username,
     password: password
   };
-  // Send a request to the server (e.g., using fetch API)
+ 
   fetch("https://kopofunction.azurewebsites.net/api/login", {
     method: "POST",
     headers: {

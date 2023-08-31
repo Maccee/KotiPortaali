@@ -6,7 +6,7 @@ function printInput() {
   let token = localStorage.getItem("token");
 
   if (!token) {
-    console.log("No token found in localStorage. Exiting.");
+    console.log("No token. Exiting.");
     return;
   }
 
@@ -18,18 +18,17 @@ function printInput() {
 
   let apiUrl = "https://kopofunction.azurewebsites.net/api/heippalappu";
 
-  // Use the Fetch API to send the request
   fetch(apiUrl, {
     method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}` // Include the token in the request headers
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ text: message }) // Send the message as JSON
+    body: JSON.stringify({ text: message }),
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("Network response not ok");
       }
       return response.text();
     })
@@ -38,24 +37,18 @@ function printInput() {
       hae();
     })
     .catch((error) => {
-      console.log(
-        "There was a problem with the fetch operation:",
-        error.message
-      );
+      console.log("There was a problem with fetch", error.message);
     });
 
-  // Clear the input field after sending
   document.getElementById("viesti").value = "";
   updateCounter();
 }
 
-
 function hae() {
-  // 1. Retrieve the token from localStorage
   let token = localStorage.getItem("token");
 
   if (!token) {
-    console.log("No token found in localStorage. Exiting.");
+    console.log("No token. Exiting.");
     return;
   }
 
@@ -73,7 +66,7 @@ function hae() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`, // Include the token in the request headers
+      Authorization: `Bearer ${token}`,
     },
   })
     .then((response) => response.json())
@@ -98,12 +91,10 @@ function updateCounter() {
   const textarea = document.getElementById("viesti");
   const counter = document.getElementById("counter");
 
-  // Trim content if it's too long
   if (textarea.value.length > 250) {
     textarea.value = textarea.value.substring(0, 250);
   }
 
-  // Update the counter
   counter.innerText = `${textarea.value.length}/250`;
 }
 
@@ -112,8 +103,8 @@ function checkLogin() {
   let token = localStorage.getItem("token");
 
   if (!token) {
-      loadContent("./login.html");
+    loadContent("./login.html");
   } else {
-      hae();
+    hae();
   }
 }
