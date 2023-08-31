@@ -274,9 +274,15 @@ i.hover {
 .username-text {
   font-size: 1rem;
 }
-.logout-text {
+.logout-text{
   font-size: 1rem;
   text-align: right;
+  color: #39A6C5;
+}
+.logout-text a{
+  font-size: 1rem;
+  text-align: right;
+  color: #39A6C5;
 }
 
 label {

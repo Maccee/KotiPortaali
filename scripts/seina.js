@@ -99,7 +99,7 @@ function updateCounter() {
 }
 
 function checkLogin() {
-  const seina = document.getElementById("heippalappuseina");
+  
   let token = localStorage.getItem("token");
 
   if (!token) {
