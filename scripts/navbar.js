@@ -5,15 +5,15 @@ function loadContent(url) {
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("contentArea").innerHTML = data;
-      if (url === "./seina.html") {
+      if (url === "./modules/heippalappu.html") {
         checkLogin();
         updateCounter();
       }
       
-      if (url === "./koti.html") {
+      if (url === "./modules/tiedotteet.html") {
         
       }
-      if (url === './pesukone.html') {
+      if (url === './modules/pesukone.html') {
         //checkLogin();
         //initPesukone();
         
@@ -27,6 +27,6 @@ function loadContent(url) {
 }
 
 window.onload = function () {
-  loadContent("./koti.html");
+  loadContent("./modules/tiedotteet.html");
   displayUserInfo();
 };

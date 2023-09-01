@@ -1,0 +1,61 @@
+.reservationflex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+.calendar {
+    margin-top: 1rem;
+    width: 300px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+    .calendarheader {
+    background-color: #2a3d57;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+  }
+    .days,
+  .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .mallipaiva {
+    background-color: #2a3d57;
+    color: white;
+  }
+    .days div,
+  .dates div {
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+    .dates .padding {
+    background-color: #f7f7f7;
+    border: none;
+  }
+  
+  .reservations {
+    font-size: 1rem;
+    width: 260px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+  }
+  
+  .reservations > ul > li {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .saunaNappi-box {
+    margin-top: 1rem;
+  }

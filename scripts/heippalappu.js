@@ -104,7 +104,7 @@ function checkLogin() {
   let token = localStorage.getItem("token");
 
   if (!token) {
-    loadContent("./login.html");
+    loadContent("./modules/login.html");
   } else {
     hae();
   }
