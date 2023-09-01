@@ -52,6 +52,9 @@
 
     <p>
       Olemme sitoutuneet suojelemaan käyttäjämme yksityisyyttä ja tietosuojaa.
+      Muistathan aina suhtautua varauksella mihin tahansa verkkopalveluun ja
+      käyttää vahvoja, uniikkeja salasanoja. Jos sinulla on kysyttävää tai
+      huolenaiheita tietoturvasta, ota meihin yhteyttä <br /><br />
       Tässä on muutamia huomionarvoisia kohtia siitä, miten tietoturva on
       hoidettu sivustollamme:
     </p>
@@ -78,10 +81,93 @@
       suojattuna haittaohjelmilta.
     </p>
 
+    <h1>Miksi tokeneita käytetään?</h1>
+    <p></p>
+    <h2>Autentikaatio</h2>
     <p>
-      Muistathan aina suhtautua varauksella mihin tahansa verkkopalveluun ja
-      käyttää vahvoja, uniikkeja salasanoja. Jos sinulla on kysyttävää tai
-      huolenaiheita tietoturvasta, ota meihin yhteyttä.
+      Kun käyttäjä kirjautuu sisään verkkopalveluun, backend voi antaa
+      käyttäjälle tokenin osoituksena onnistuneesta kirjautumisesta. Tämä token
+      voidaan sitten lähettää takaisin palvelimelle jokaisessa seuraavassa
+      pyynnössä varmistamaan käyttäjän identiteetti.
+    </p>
+
+    <h2>Istunnonhallinta</h2>
+    <p>
+      Perinteiset istunnot vaativat palvelinta pitämään kirjaa jokaisesta
+      aktiivisesta käyttäjästä, mikä voi olla resurssitehokasta suurilla
+      käyttäjämäärillä. Stateless-tokenit, kuten JWT (JSON Web Token), voivat
+      sisältää kaiken tarvittavan tiedon käyttäjästä, jolloin palvelimen ei
+      tarvitse tallentaa istuntoja.
+    </p>
+
+    <h2>Valtuutus</h2>
+    <p>
+      Tokenit voivat sisältää tietoa siitä, mitä käyttäjä saa tehdä, esimerkiksi
+      mitä API-endpointteja he voivat kutsua. Tämä tarkoittaa, että jokaisen
+      pyynnön yhteydessä palvelin voi tarkistaa tokenin oikeudet ennen pyynnön
+      käsittelyä.
+    </p>
+
+    <h1>Mitä hyötyä tokeneista on?</h1>
+    <p></p>
+    <h2>Turvallisuus</h2>
+    <p>
+      Koska token vahvistetaan jokaisella pyynnöllä, se lisää ylimääräisen
+      turvallisuustason estämällä ei-valtuutetut pääsyn arkaluontoisiin
+      toimintoihin.
+    </p>
+
+    <h2>Skaalautuvuus</h2>
+    <p>
+      Stateless-tokenit mahdollistavat sovelluksen skaalautuvuuden ilman, että
+      palvelimen tarvitsee ylläpitää aktiivisia istuntoja, mikä tekee
+      järjestelmästä tehokkaamman suurilla käyttäjämäärillä.
+    </p>
+
+    <h2>Joustavuus</h2>
+    <p>
+      Tokeneita voidaan käyttää monissa eri sovelluksissa ja alustoilla, mikä
+      tekee niistä ihanteellisen ratkaisun monimutkaisiin järjestelmiin, joissa
+      on useita palveluita tai mikropalveluita.
+    </p>
+
+    <h2>Rajoitettu elinikä</h2>
+    <p>
+      Tokenit voidaan määrittää vanhenemaan tietyn ajan kuluttua, mikä vähentää
+      riskiä, että mahdollisesti vuotanut token aiheuttaisi pitkäaikaisia
+      tietoturvaongelmia.
+    </p>
+
+    <h2>Yksinkertaisuus ja integroitavuus</h2>
+    <p>
+      Monet nykyaikaiset kehitystyökalut ja -alustat tukevat token-pohjaista
+      autentikaatiota "out of the box", mikä tekee niiden käyttöönotosta ja
+      hallinnasta yksinkertaista.
+    </p>
+
+    <h2>Yhteenveto</h2>
+    <p>
+      Yhteenvetona, kun tokeni vahvistetaan backendissä ennen minkäänlaisten
+      tietojen tallentamista tietokantaan, se varmistaa, että vain oikeutetut ja
+      autentikoidut käyttäjät voivat tehdä muutoksia ja toimintoja, suojaten
+      näin sovellusta ja sen tietoja mahdollisilta hyökkäyksiltä ja
+      väärinkäytöksiltä.
+    </p>
+    <p>
+      Token on kuin digitaalinen pääsylippu palveluusi. Kuvittele menemässä
+      konserttiin: pääsylippusi vahvistaa, että olet ostanut lipun, ja antaa
+      sinulle oikeuden tulla sisään ja nauttia esityksestä. Samalla tavoin, kun
+      kirjaudut verkkopalveluun, palvelin antaa sinulle tokenin (pääsylippusi)
+      joka vahvistaa oikeutesi käyttää tiettyjä osia palvelusta.
+    </p>
+    <p>
+      Tällä sivulla, tokeniin tallennetaan käyttäjänimi sekä tieto siitä, onko
+      käyttäjä ylläpitäjä (isAdmin). Lisäksi tokenissa on tieto siitä milloin
+      token on luotu, milloin se vanhenee ja kuka sen on myöntänyt. (palvelun
+      nimi) Tämä tieto toimii samalla tavoin kuin pääsylipun erityistiedot,
+      esimerkiksi lipussa voi olla merkintä VIP-alueelle pääsystä. Jos isAdmin
+      on asetettu arvoon true, se on kuin sinulla olisi VIP-lippu palveluun:
+      sinulla on oikeudet tehdä enemmän kuin tavallisella käyttäjällä.
     </p>
   </div>
 </body>
