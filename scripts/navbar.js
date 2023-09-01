@@ -9,7 +9,7 @@ function loadContent(url) {
         checkLogin();
         updateCounter();
       }
-      // After content of koti.html is loaded
+      
       if (url === "./koti.html") {
         
       }

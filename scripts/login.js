@@ -1,4 +1,3 @@
-
 function toggleRegister() {
   var title = document.querySelector("h1");
   var confirmPasswordDiv = document.getElementById("confirmPasswordDiv");
@@ -31,45 +30,44 @@ function Kirjaudu() {
   }
 
   let spinner = document.querySelector(".spinner");
-  spinner.style.display = "inline-block"; // Show the spinner
+  spinner.style.display = "inline-block";
 
   var payload = {
     reg: 0,
     username: username,
-    password: password
+    password: password,
   };
-  
 
-    fetch("https://kopofunction.azurewebsites.net/api/token", {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    })
+  fetch("https://kopofunction.azurewebsites.net/api/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  })
     .then((response) => {
-        spinner.style.display = "none";
-        if (!response.ok) {
-            return response.json().then((errorData) => {
-                throw new Error(errorData.message);
-            });
-        }
-        return response.json();
+      spinner.style.display = "none";
+      if (!response.ok) {
+        return response.json().then((errorData) => {
+          throw new Error(errorData.message);
+        });
+      }
+      return response.json();
     })
     .then((data) => {
-        console.log(data);
-        // Store the token
-        localStorage.setItem('token', data.token);
-        loadContent("./koti.html");
-        displayUserInfo();
-        console.log(isAdmin());
+      console.log(data);
+      // Store the token
+      localStorage.setItem("token", data.token);
+      loadContent("./koti.html");
+      displayUserInfo();
+      console.log(isAdmin());
     })
     .catch((error) => {
-        console.error("Error:", error);
-        alert(error.message);
-        spinner.style.display = "none";
+      console.error("Error:", error);
+      alert(error.message);
+      spinner.style.display = "none";
     });
-    return false;
+  return false;
 }
 
 // uuden käyttäjän rekisteröinti!
@@ -82,7 +80,6 @@ function Rekisteroidu() {
   var password = passwordElem.value;
   var confirmPassword = confirmPasswordElem.value;
 
- 
   if (
     !username ||
     !password ||
@@ -96,15 +93,15 @@ function Rekisteroidu() {
   var payload = {
     reg: 1,
     username: username,
-    password: password
+    password: password,
   };
- 
+
   fetch("https://kopofunction.azurewebsites.net/api/login", {
     method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(payload),
   })
     .then((response) => {
       if (!response.ok) {
@@ -115,7 +112,7 @@ function Rekisteroidu() {
       return response.text();
     })
     .then((data) => {
-      console.log(data)
+      console.log(data);
       alert(data);
     })
     .catch((error) => {
@@ -130,7 +127,3 @@ function Rekisteroidu() {
 
   return false;
 }
-
-
-
-

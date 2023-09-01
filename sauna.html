@@ -3,32 +3,93 @@
     <div class="pesukoneHeader">
         <h1>Saunavuorot</h1>
         
-        <label for="kuukaudet">Valitse kuukausi tästä:</label>
-        <select name="kuukausi" id="kuukaudet">
-          <!-- <option value="">--kuukaudet--</option>
-          <option value="tammikuu">Tammikuu</option>
-          <option value="helmikuu">Helmikuu</option>
-          <option value="maaliskuu">Maaliskuu</option>
-          <option value="huhtikuu">Huhtikuu</option>
-          <option value="toukokuu">Toukokuu</option>
-          <option value="kesäkuu">Kesäkuu</option>
-          <option value="heinäkuu">Heinäkuu</option>
-          <option value="elokuu">Elokuu</option>
-          <option value="syyskuu">Syyskuu</option>
-          <option value="lokakuu">Lokakuu</option>
-          <option value="marraskuu">Marraskuu</option>
-          <option value="joulukuu">Joulukuu</option> -->
-        </select>
-        
-        <label for="päivät">Valitse päivä tästä:</label>
-        <select name="päivä" id="päivät" disabled></select>
+        <div class="reservationflex">
+          <div class="calendar">
+            <div class="calendarheader">
+                Syyskuu 2023
+            </div>
+            <div class="days">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="dates">
+                <!-- Start the month with padding for days before the 1st -->
+                <!-- September 1, 2023 is a Friday so 4 days padding for Sun to Thu -->
+                <div class="padding"></div>
+                <div class="padding"></div>
+                <div class="padding"></div>
+                <div class="padding"></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div class="mallipaiva">9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+            </div>
+                </div>
+                <div class="reservations">
+                  <h2>Perjantai 9. Syyskuu </h2>
+                  <ul>
+                    <li>
+                        <span class="time">18:00 - 19:00</span>
+                        <span class="statusreserved">Asunto 4</span>
+                    </li>
+                    <li>
+                        <span class="time">19:00 - 20:00</span>
+                        <span class="statusavailable">Available</span>
+                    </li>
+                    <li>
+                        <span class="time">20:00 - 21:00</span>
+                        <span class="statusavailable">Available</span>
+                    </li>
+                    <li>
+                        <span class="time">21:00 - 22:00</span>
+                        <span class="statusreserved">Asunto 16</span>
+                    </li>
+                    <li>
+                        <span class="time">22:00 - 23:00</span>
+                        <span class="statusavailable">Available</span>
+                    </li>
+                </ul>
+              </div>
+        </div>
         
         <section>
           <button>Varaa</button>
         </section>
       </div>
       <hr />
-      
-      <section id="saunavuorot" class="saunavuorot"></section>
+            <section id="saunavuorot" class="saunavuorot">
+              
+            </section>
     </body>
 </body>

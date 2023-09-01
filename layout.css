@@ -6,8 +6,6 @@ body {
 
 h1 {
   font-size: 2rem;
-  
-  
 }
 
 h2 {
@@ -38,7 +36,6 @@ button {
   background-color: #4a6c8a;
   color: #fff;
   cursor: pointer;
-  
 }
 button:hover {
   background-color: #6989a9; /* A bit lighter for hover effect */
@@ -53,7 +50,6 @@ button:hover {
   background-color: #4a6c8a;
   color: #fff;
   cursor: pointer;
-  
 }
 
 .buttonYmpyra {
@@ -90,17 +86,16 @@ section {
   width: 100%;
   height: 4rem;
   font-size: 2rem;
-  background-color: #2a3d57;  /* Deep desaturated blue */
-  
+  background-color: #2a3d57; /* Deep desaturated blue */
+
   color: #ffffff; /* Text color */
 }
 
 .innerContainer {
-  color: #333333;  /* Dark gray for text contrast */
+  color: #333333; /* Dark gray for text contrast */
   margin-top: 4rem;
   margin-bottom: 5rem;
   padding: 1rem;
-  
 }
 
 .navbar {
@@ -108,12 +103,11 @@ section {
   bottom: 0;
   width: 100%;
   font-size: 2.5rem;
-  background-color: #3c4f6d;  /* Lighter shade of the deep blue */
+  background-color: #3c4f6d; /* Lighter shade of the deep blue */
   text-align: center;
   padding-block-end: 0rem;
   color: #ffffff; /* White text color */
 }
-
 
 .navbar a {
   text-decoration: none;
@@ -123,10 +117,8 @@ i {
   padding: 0.5rem;
 }
 i.hover {
-  
-    background-color: #6989a9; /* A bit lighter for hover effect */
+  background-color: #6989a9; /* A bit lighter for hover effect */
 }
-
 
 .kotiHeader {
   display: flex;
@@ -142,7 +134,8 @@ i.hover {
   border-radius: 1rem;
 }
 
-.pesukoneHeader, .heippaHeader {
+.pesukoneHeader,
+.heippaHeader {
   padding: 2rem;
   border: 1px solid #b6cedf;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -162,7 +155,6 @@ i.hover {
   border: 1px solid #b6cedf;
   border-radius: 5px;
   text-align: left;
-  
 }
 
 .login-container {
@@ -196,7 +188,6 @@ i.hover {
   border: 1px solid #b6cedf;
   border-radius: 5px;
   text-align: left;
-  
 }
 
 .button-group {
@@ -269,20 +260,19 @@ i.hover {
   justify-content: center;
   padding: 0 1rem 0 1rem;
   height: 4rem;
-  
 }
 .username-text {
   font-size: 1rem;
 }
-.logout-text{
+.logout-text {
   font-size: 1rem;
   text-align: right;
-  color: #39A6C5;
+  color: #39a6c5;
 }
-.logout-text a{
+.logout-text a {
   font-size: 1rem;
   text-align: right;
-  color: #39A6C5;
+  color: #39a6c5;
 }
 
 label {
@@ -299,4 +289,66 @@ select {
 .spinner {
   display: none;
   color: #4a6c8a;
+}
+
+.calendar {
+  margin-top: 1rem;
+  width: 300px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendarheader {
+  background-color: #2a3d57;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.2rem;
+}
+
+.days,
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.mallipaiva {
+  background-color: #2a3d57;
+  color: white;
+}
+
+.days div,
+.dates div {
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.dates .padding {
+  background-color: #f7f7f7;
+  border: none;
+}
+
+.reservations {
+  font-size: 1rem;
+  width: 260px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.reservations > ul > li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.reservationflex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
