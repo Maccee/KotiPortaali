@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KotiPortaali</title>
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./layout.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/12a0adac89.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./layout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/12a0adac89.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="./scripts/main.js"></script>
     <script src="./scripts/seina.js"></script>
     <script src="./scripts/navbar.js"></script>
     <script src="./scripts/login.js"></script>
-</head>
+  </head>
 
-<body>
-    <section class="mainContainer">
+  <body>
+    <!--App Container-->
+    <section>
+      <!--Logo ja Login-->
+      <header class="pageHeader">
+        Kotiportaalilogo
+        <!--<a href="#" onclick="loadContent('./koti.html')"
+          ><img src="./assets/logo2.png" alt=""
+        /></a>-->
+        <span class="loginStuff">
+          <span id="userInfo" class="username-text-box"></span>
+          <span id="logout" class="logout-text-box"
+            ><a href="#" onclick="logout()"></a
+          ></span>
+          <a
+            class="login-button"
+            href="#"
+            onclick="loadContent('./login.html')"
+          >
+            <i class="fa-solid fa-right-to-bracket" style="color: #39a6c5"></i>
+          </a>
+        </span>
+      </header>
 
-        <header class="header">
-            <a href="#" onclick="loadContent('./koti.html')"><img src="./asets/logo2.png" alt=""></a>
-            <span class="loginStuff">
-                <span id="userInfo" class="username-text"></span>
-                <span id="logout" class="logout-text"><a href="#" onclick="logout()"></a></span>
-                <a class="login-button" href="#" onclick="loadContent('./login.html')">
-                    <i class="fa-solid fa-right-to-bracket" style="color: #39A6C5;"></i>
-                </a>
-            </span>
-            
-        </header>
-        
+      <div id="contentArea" class="mainModuleContentContainer"></div>
 
-        <div id="contentArea" class="innerContainer"></div>
-
-        <section class="navbar">
-            <a href="#" onclick="loadContent('./koti.html')">
-                <i class="fa-solid fa-house-chimney" style="color: #39A6C5;"></i>
-            </a>
-            <a href="#" onclick="loadContent('./huolto.html')">
-                <i class="fa-solid fa-hammer" style="color: #39A6C5;"></i>
-            </a>
-            <a href="#" onclick="loadContent('./sauna.html')">
-                <i class="fa-solid fa-bucket" style="color: #39A6C5;"></i>
-            </a>
-            <a href="#" onclick="loadContent('./pesukone.html')">
-                <i class="fa-solid fa-microchip" style="color: #39A6C5;"></i>
-            </a>
-            <a href="#" onclick="loadContent('./seina.html')">
-                <i class="fa-solid fa-message" style="color: #39A6C5;"></i>
-            </a>
-        </section>
+      <section class="bottomNavbar">
+        <a href="#" onclick="loadContent('./koti.html')">
+          <i class="fa-solid fa-house-chimney"></i>
+        </a>
+        <a href="#" onclick="loadContent('./huolto.html')">
+          <i class="fa-solid fa-hammer"></i>
+        </a>
+        <a href="#" onclick="loadContent('./sauna.html')">
+          <i class="fa-solid fa-bucket"></i>
+        </a>
+        <a href="#" onclick="loadContent('./pesukone.html')">
+          <i class="fa-solid fa-microchip"></i>
+        </a>
+        <a href="#" onclick="loadContent('./seina.html')">
+          <i class="fa-solid fa-message"></i>
+        </a>
+      </section>
     </section>
-
-</body>
-
-
+  </body>
 </html>

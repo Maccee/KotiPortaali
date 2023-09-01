@@ -1,95 +1,91 @@
-
+<link rel="stylesheet" href="./saunavaraus.css" />
 <body>
-    <div class="pesukoneHeader">
-        <h1>Saunavuorot</h1>
-        
-        <div class="reservationflex">
-          <div class="calendar">
-            <div class="calendarheader">
-                Syyskuu 2023
-            </div>
-            <div class="days">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="dates">
-                <!-- Start the month with padding for days before the 1st -->
-                <!-- September 1, 2023 is a Friday so 4 days padding for Sun to Thu -->
-                <div class="padding"></div>
-                <div class="padding"></div>
-                <div class="padding"></div>
-                <div class="padding"></div>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div class="mallipaiva">9</div>
-                <div>10</div>
-                <div>11</div>
-                <div>12</div>
-                <div>13</div>
-                <div>14</div>
-                <div>15</div>
-                <div>16</div>
-                <div>17</div>
-                <div>18</div>
-                <div>19</div>
-                <div>20</div>
-                <div>21</div>
-                <div>22</div>
-                <div>23</div>
-                <div>24</div>
-                <div>25</div>
-                <div>26</div>
-                <div>27</div>
-                <div>28</div>
-                <div>29</div>
-                <div>30</div>
-            </div>
-                </div>
-                <div class="reservations">
-                  <h2>Perjantai 9. Syyskuu </h2>
-                  <ul>
-                    <li>
-                        <span class="time">18:00 - 19:00</span>
-                        <span class="statusreserved">Asunto 4</span>
-                    </li>
-                    <li>
-                        <span class="time">19:00 - 20:00</span>
-                        <span class="statusavailable"><button class="buttonPieni">Vapaa</button></span>
-                    </li>
-                    <li>
-                        <span class="time">20:00 - 21:00</span>
-                        <span class="statusavailable"><button class="buttonPieni">Vapaa</button></span>
-                    </li>
-                    <li>
-                        <span class="time">21:00 - 22:00</span>
-                        <span class="statusreserved">Asunto 16</span>
-                    </li>
-                    <li>
-                        <span class="time">22:00 - 23:00</span>
-                        <span class="statusavailable"><button class="buttonPieni">Vapaa</button></span>
-                    </li>
-                </ul>
-              </div>
+  <div class="moduleHeader">
+    <h1>Saunavuorot</h1>
+
+    <div class="reservationflex">
+      <div class="calendar">
+        <div class="calendarheader">Syyskuu 2023</div>
+        <div class="days">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
         </div>
-        
-        <section>
-          <button>Varaa</button>
-        </section>
+        <div class="dates">
+          <!-- Start the month with padding for days before the 1st -->
+          <!-- September 1, 2023 is a Friday so 4 days padding for Sun to Thu -->
+          <div class="padding"></div>
+          <div class="padding"></div>
+          <div class="padding"></div>
+          <div class="padding"></div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div class="mallipaiva">9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+          <div>18</div>
+          <div>19</div>
+          <div>20</div>
+          <div>21</div>
+          <div>22</div>
+          <div>23</div>
+          <div>24</div>
+          <div>25</div>
+          <div>26</div>
+          <div>27</div>
+          <div>28</div>
+          <div>29</div>
+          <div>30</div>
+        </div>
       </div>
-      <hr />
-            <section id="saunavuorot" class="saunavuorot">
-              
-            </section>
-    </body>
+
+      <div class="reservations">
+        <h2>Perjantai 9. Syyskuu</h2>
+        <ul>
+          <li>
+            <span>18:00 - 19:00</span>
+            <span>Asunto 4</span>
+          </li>
+          <li>
+            <span>19:00 - 20:00</span>
+            <span><button class="buttonPieni">Valitse</button></span>
+          </li>
+          <li>
+            <span>20:00 - 21:00</span>
+            <span><button class="buttonPieni">Valitse</button></span>
+          </li>
+          <li>
+            <span>21:00 - 22:00</span>
+            <span>Asunto 16</span>
+          </li>
+          <li>
+            <span>22:00 - 23:00</span>
+            <span><button class="buttonPieni">Valitse</button></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <section class="saunaNappi-box">
+      <button>Varaa</button>
+    </section>
+  </div>
+
+  <hr />
+  <section id="saunavuorot" class="saunavuorot"></section>
 </body>

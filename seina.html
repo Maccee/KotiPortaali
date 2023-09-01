@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="./heippalappu.css">
 <body>
-    <div class="heippaHeader">
+    <div class="moduleHeader heippaHeader">
         <h1>Heippalappuseinä</h1>
         <div class="textarea-container">
             <textarea id="viesti" class="viestiKentta" placeholder="Kirjoita viesti" oninput="updateCounter()"></textarea>
@@ -7,9 +8,10 @@
         </div>
         
         
-        <section class="heippaNapit">
+        <section class="heippalappuNapit">
             <button onclick="deleteInput()">Tyhjennä</button>
             <button onclick="printInput()">Lähetä</button>
+            <span><input type="checkbox" name="" id="">Lisää oma nimi</span>
         
         
         </section>
