@@ -1,55 +1,53 @@
 ![Screenshot](/assets/logo.png)
 
-Test
+# TODO
+
+## Skaalautuva moduulien lisääminen
+
+- Funktio kehitteillä, joka ohjaa oikeaan rajapintaan
+
+```html
+<button onclick="sauna('sauna')">varaa sauna</button>
+
+<script>
+    function sauna(parameter) {
+        if (parameter === "sauna") {
+            apiurl = www.api.com/varaasauna
+        }
+    }
+</script>
+```
+
 
 =======
 ## Tiedotteet
 
-- Etusivulla ensimmäisenä
-
-### todos
-
-    - databaseen uus table ja backend integraatio
-    - linkki uuden tiedotteen kirjoittamiseen
+- Mahdollisuus kirjottaa tiedote Adminina
 
 ## huoltopyyntölomake
 
-- simppeli lomake asunnon numero, nimi, huollon tarve tms.
+- DEMO valmis. Pitää devata.
 
-### todos
+## Saunavaraus module
 
-    - Kukkis mikä homma, oletan että perjantaina valmis t. Scrummaster
+- DEMO valmis. Pitää devata.
 
-## Saunavuorojen varaus
+## Heippalappuseinä module
+
+- mahdollisuus lisätä oma nimi viestiin.
+- mahdollisuus poistaa omia viestejä.
+
+## Kulutustiedot module
+
+- sähkö ja vesi.
+- spot hinta.
+- navbaariin nappula.
+
+## Login module
+
+- Alertit, Errorhandling ja Console.logien siivous.
 
 
-- kalenteri, varaus, poisto, vaihto
-
-## Heippalappuseinä
-
-- viestiseinä
-
-### todos
-
-    - Mahdollisuus poistaa omia heippalappuja (login integraation jälkeen)
-
-## taloyhtiön kulutustiedot
-
-- sähkö ja vesi
-- spot hinta
-
-### todos
-
-    - tähän joku kiva nappula fontawesomesta
-
-## login
-
-- palveluun kirjautuminen
-
-### todos
-
-    - varmaan ens-alkuun joku simppeli käyttäjänimi/salasanakombo ilman varmistuksia......
-    - paskatku vimosen päälle JWT HASH TOKEN VALIDATION SESSIONID VERIFY
 
 ![Screenshot](assets/varikartta.jpg)
 
