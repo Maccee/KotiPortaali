@@ -9,6 +9,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 h1 {
   font-size: 2rem;
@@ -105,7 +106,7 @@ hr {
   color: #333333; 
   margin-top: 4rem;
   margin-bottom: 4rem;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .bottomNavbar {
