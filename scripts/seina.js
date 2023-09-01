@@ -1,5 +1,6 @@
 function deleteInput() {
   document.getElementById("viesti").value = "";
+  updateCounter();
 }
 
 function printInput() {
