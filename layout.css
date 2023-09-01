@@ -352,3 +352,7 @@ select {
   flex-wrap: wrap;
   gap: 3rem;
 }
+
+.statusavailable.hover {
+  background-color: #2a3d57;
+}
