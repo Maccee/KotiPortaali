@@ -3,30 +3,23 @@
   
   <div class="moduleHeader pesukoneHeader">
     <h1>Pesukone varaukset</h1>
-    
-    <label for="kuukaudet">Valitse kuukausi tästä:</label>
-    <select name="kuukausi" id="kuukaudet">
-      <!-- <option value="">--kuukaudet--</option>
-      <option value="tammikuu">Tammikuu</option>
-      <option value="helmikuu">Helmikuu</option>
-      <option value="maaliskuu">Maaliskuu</option>
-      <option value="huhtikuu">Huhtikuu</option>
-      <option value="toukokuu">Toukokuu</option>
-      <option value="kesäkuu">Kesäkuu</option>
-      <option value="heinäkuu">Heinäkuu</option>
-      <option value="elokuu">Elokuu</option>
-      <option value="syyskuu">Syyskuu</option>
-      <option value="lokakuu">Lokakuu</option>
-      <option value="marraskuu">Marraskuu</option>
-      <option value="joulukuu">Joulukuu</option> -->
-    </select>
-    
-    <label for="päivät">Valitse päivä tästä:</label>
-    <select name="päivä" id="päivät" disabled></select>
-    
+    <div class="container">
+      <div>
+        <label for="kuukaudet">Valitse kuukausi:</label>
+        <select name="kuukausi" id="kuukaudet"></select>
+      </div>
+      <div>
+        <label for="päivät">Valitse päivä:</label>
+        <select name="päivä" id="päivät" disabled></select>
+      </div>
+      <div>
+        <label for="ajat">Valitse aika:</label>
+        <select name="aika" id="ajat" disabled></select> 
+      </div>
+    </div>
     <section>
       <button>Varaa</button>
-    </section>
+    </section> 
   </div>
   <hr />
   
