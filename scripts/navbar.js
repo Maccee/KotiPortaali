@@ -14,8 +14,8 @@ function loadContent(url) {
         
       }
       if (url === './modules/pesukone.html') {
-        //checkLogin();
-        //initPesukone();
+        checkLogin();
+        initPesukone();
         
       }
 
