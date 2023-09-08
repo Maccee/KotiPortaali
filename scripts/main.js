@@ -35,7 +35,7 @@ function isAdmin() {
 }
 function logout() {
     localStorage.removeItem('token');
-    loadContent('./login.html');
+    loadContent('./modules/login.html');
     
     
     displayUserInfo(); 
