@@ -58,7 +58,7 @@ function Kirjaudu() {
       console.log(data);
       // Store the token
       localStorage.setItem("token", data.token);
-      loadContent("./koti.html");
+      loadContent("./modules/tiedotteet.html");
       displayUserInfo();
       console.log(isAdmin());
     })
