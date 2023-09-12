@@ -1,25 +1,38 @@
 <link rel="stylesheet" href="./modules/pesukone.css">
 <body>
-  
   <div class="moduleHeader pesukoneHeader">
     <h1>Pesukone varaukset</h1>
-    <div class="container">
-      <div>
-        <label for="kuukaudet">Valitse kuukausi:</label>
-        <select name="kuukausi" id="kuukaudet"></select>
-      </div>
-      <div>
-        <label for="päivät">Valitse päivä:</label>
-        <select name="päivä" id="päivät" disabled></select>
-      </div>
-      <div>
-        <label for="ajat">Valitse aika:</label>
-        <select name="aika" id="ajat" disabled></select> 
-      </div>
-    </div>
-    <section>
-      <button>Varaa</button>
-    </section> 
+    <section class="main">
+      <table class="calendar">
+        <thead>
+          <tr>
+            <th class="darkbBackGround">
+              <i class="fa-solid fa-backward-step" style="color: #f5f7f9;"></i>
+            </th>
+            <th colspan="5" class="month"></th>
+            <th class="darkbBackGround">
+              <i class="fa-solid fa-forward-step" style="color: #f5f7f9;"></i>
+            </th>
+          </tr>
+          <tr class="days-of-week"></tr>
+        </thead>
+        <tbody class="table-body">
+        </tbody>
+      </table>
+      <table class="time">
+        <thead>
+          <tr>
+            <th colspan="7" class="selectedDay"></th>
+          </tr>
+        </thead>
+        <tbody class="table2-body">
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
   <hr />
   
