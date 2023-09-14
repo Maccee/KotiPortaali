@@ -102,3 +102,7 @@ button {
 .hidden {
   display: none;
 }
+
+.withoutborder {
+  border-inline-end: none;
+}
