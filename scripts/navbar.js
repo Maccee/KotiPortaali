@@ -13,7 +13,7 @@ function loadContent(url) {
 
       }
       if (url === './modules/saunavaraus.html' || url === './modules/pesukone.html') {
-        checkLogin();
+        //checkLogin();
         initSauna();
         //initPesukone();
       }
