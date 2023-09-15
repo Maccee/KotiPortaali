@@ -11,6 +11,7 @@ let monthIndex = today.getMonth();
 
 const initPesukone = () => {
     getWeeks(8);
+    initWeekDays();
     initMonthChangers();
     const th = document.querySelector(".month");  // add name of month to the table
     th.textContent = monthNow.toUpperCase();
@@ -67,7 +68,7 @@ const initWeekDays = () => {
     const daysOfWeek = Array(7).fill('d').map((_, index) => {
         const dayOfWeek = new Date(monday);
         dayOfWeek.setDate(dayOfWeek.getDate() + index);
-        return dayOfWeek.toLocaleDateString('fi', { weekday: 'short' });
+        return dayOfWeek.toLocaleDateString('fi', { weekday: 'short' }).toUpperCase();
     })
     const tableHeadRowElement = document.querySelector('.calendar .days-of-week')
     for (const dayOfWeek of daysOfWeek) {
