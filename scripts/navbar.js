@@ -13,10 +13,10 @@ function loadContent(url) {
       if (url === "./modules/tiedotteet.html") {
         
       }
-      if (url === './modules/pesukone.html') {
+      if (url === './modules/saunavaraus.html' || url === './modules/pesukone.html') {
         checkLogin();
-        initPesukone();
-        
+        initSauna();
+        //initPesukone();  
       }
 
     })
