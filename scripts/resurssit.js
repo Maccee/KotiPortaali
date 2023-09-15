@@ -3,7 +3,6 @@ function fetchDataFromAPI() {
         .then(response => response.json())
         .then(data => {
             const labels = data.map(item => moment(item.DateTime).format('YYYY-MM-DDTHH:mm:ssZ'));
-
             const priceWithTax = data.map(item => item.PriceWithTax);
 
             const ctx = document.getElementById('priceChart').getContext('2d');
