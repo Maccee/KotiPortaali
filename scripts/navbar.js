@@ -1,4 +1,5 @@
 function loadContent(url) {
+
   fetch(url)
     .then((response) => response.text())
     .then((data) => {
@@ -9,21 +10,22 @@ function loadContent(url) {
       }
 
       if (url === "./modules/tiedotteet.html") {
+
       }
-
       if (url === './modules/saunavaraus.html' || url === './modules/pesukone.html') {
-        //checkLogin();
+        checkLogin();
         initSauna();
-        initPesukone();  
-
+        //initPesukone();
       }
       if (url === "./modules/resurssit.html") {
         fetchDataFromAPI();
       }
+
     })
     .catch((error) => {
       console.error("Virhe:", error);
     });
+
 }
 
 window.onload = function () {
