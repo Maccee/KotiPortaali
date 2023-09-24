@@ -6,43 +6,38 @@
   gap: 1rem;
 }
 
-h1 {
+.title {
   text-align: center;
-  letter-spacing: 0.5rem;
-  margin: 1rem;
+  margin: 0 1rem 1rem 1rem;
 }
 
-label {
-  font-family: sans-serif;
-  font-size: 1rem;
-  padding-right: 10px;
+.calendar {
+  border: 1.5px solid black;
 }
 
-table.calendar {
-  border-collapse: collapse;
+.calendar td {
+  border: 1px solid gray;
 }
 
-table, td, th {
-  border: 1px solid;
-  cursor: pointer;
-}
-
-td {
+.table2-body td {
   vertical-align: middle;
   text-align: center;
   font-size: 1rem;
+  border: 1px solid;
 }
 
-th {
+.th {
   width: 3.5rem;
   height: 3.5rem;
   vertical-align: middle;
   text-align: center;
   font-size: large;
   letter-spacing: 0.5rem;
+  border: 1px solid;
+  cursor: pointer;
 }
 
-.darkbBackGround {
+.dark-back-ground {
   background-color: #3C4E6D;
 }
 
@@ -64,6 +59,7 @@ th {
 .day {
   width: 3.5rem;
   height: 3.5rem;
+  font-size: 1rem;
   vertical-align: middle;
   text-align: center;
 }
@@ -86,15 +82,27 @@ th {
   background-color: #3C4E6D;
 }
 
-button {
+.btn {
   padding: 0.3rem 0.5rem;
   margin: 0.3rem;
 }
 
-.table2-body {
-  height: 21rem;
-  overflow: scroll;
-  display: block;
+.time-select-wrapper {
+  width: 25rem;
+  position: relative;
+}
+
+.time thead {
+  position: sticky;
+  top: 0; 
+}
+
+.time-select {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  border: 1px solid;
 }
 
 .table2-body tr td {
@@ -107,4 +115,12 @@ button {
 
 .withoutborder {
   border-inline-end: none;
+}
+
+@media (max-width:946px)
+{
+  .time-select {
+    position: initial; 
+    top: initial;
+  }  
 }
