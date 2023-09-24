@@ -1,6 +1,5 @@
-
 function loadContent(url) {
-  
+
   fetch(url)
     .then((response) => response.text())
     .then((data) => {
@@ -9,19 +8,23 @@ function loadContent(url) {
         checkLogin();
         updateCounter();
       }
-      
+
       if (url === "./modules/tiedotteet.html") {
-        
+
       }
       if (url === './modules/pesukone.html') {
-        checkLogin();
+        // checkLogin();
         initPesukone();  
       }
 
       if (url === './modules/saunavaraus.html') {
-        checkLogin();
+        // checkLogin();
         initSauna();
       }
+
+      if (url === "./modules/resurssit.html") {
+        fetchDataFromAPI();
+      }  
 
     })
     .catch((error) => {
