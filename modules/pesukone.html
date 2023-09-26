@@ -1,16 +1,16 @@
-<link rel="stylesheet" href="./modules/pesukone.css">
+<link rel="stylesheet" href="./modules/dayTimeSelect.css">
 <body>
-  <div class="moduleHeader">
-    <h1>Pesukone varaukset</h1>
-    <section class="main">
+  <div class="moduleHeader pesukoneHeader">
+    <h1 class="title">Pesukone varaukset</h1>
+    <div class="main">
       <table class="calendar">
         <thead>
           <tr>
-            <th class="darkbBackGround withoutborder">
+            <th class="th dark-back-ground withoutborder">
               <i class="fa-solid fa-backward-step" style="color: #f5f7f9;"></i>
             </th>
-            <th colspan="5" class="month"></th>
-            <th class="darkbBackGround">
+            <th colspan="5" class="th month"></th>
+            <th class="th dark-back-ground">
               <i class="fa-solid fa-forward-step" style="color: #f5f7f9;"></i>
             </th>
           </tr>
@@ -19,20 +19,23 @@
         <tbody class="table-body">
         </tbody>
       </table>
-      <table class="time">
-        <thead>
-          <tr>
-            <th colspan="7" class="selectedDay"></th>
-          </tr>
-        </thead>
-        <tbody class="table2-body">
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </div>
-  
+      <div class="time-select-wrapper">
+        <div class="time-select">
+          <table class="time">
+            <thead>
+              <tr>
+                <th colspan="7" class="th selectedDay"></th>
+              </tr>
+            </thead>
+            <tbody class="table2-body">
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>  
 </body>
