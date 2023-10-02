@@ -1,5 +1,5 @@
 const initSauna = () => {
-    getWeeks(8);
+    getWeeks(monthIndex);
     initWeekDays();
     initMonthChangers();
     const th = document.querySelector(".month");

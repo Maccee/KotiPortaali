@@ -1,5 +1,5 @@
 const initPesukone = () => {
-    getWeeks(8);
+    getWeeks(monthIndex);
     initWeekDays();
     initMonthChangers();
     const th = document.querySelector(".month");  // add name of month to the table
