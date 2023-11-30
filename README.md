@@ -1,23 +1,6 @@
 ![Screenshot](/assets/logo.png)
 
-# TODO
-
-## Skaalautuva moduulien lisääminen
-
-- Funktio kehitteillä, joka ohjaa oikeaan rajapintaan
-
-```html
-<button onclick="sauna('sauna')">varaa sauna</button>
-
-<script>
-    function sauna(parameter) {
-        if (parameter === "sauna") {
-            apiurl = www.api.com/varaasauna
-        }
-    }
-</script>
-```
-
+## Ensimmäinen ryhmätyö
 
 =======
 ## Tiedotteet
@@ -51,4 +34,5 @@
 
 ![Screenshot](assets/varikartta.jpg)
 
+![image](https://github.com/Maccee/KotiPortaali/assets/70291537/3a17d87d-9408-4b1d-af9f-82b71ce2551d)
 
